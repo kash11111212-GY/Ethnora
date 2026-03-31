@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethnic Wear</title>
+<style>
+body { margin:0; font-family: 'Segoe UI', sans-serif; background:#fff7f0; }
+header { background:#8b0000; color:white; padding:15px; text-align:center; font-size:24px; }
+nav { display:flex; justify-content:center; background:#d4af37; }
+nav button { padding:15px 25px; border:none; background:none; font-size:18px; cursor:pointer; }
+nav button:hover { background:#fff; }
+.section { display:none; padding:20px; }
+.active { display:block; }
+.hero { height:400px; display:flex; align-items:center; justify-content:center; color:white; font-size:30px; }
+.lehenga-hero {
+background: url('https://images.unsplash.com/photo-1610030469668-3d8b7c6b2e5e') no-repeat center/cover;
+animation: zoom 10s infinite alternate;
+}
+.suit-hero {
+background: url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf') no-repeat center/cover;
+animation: zoom 10s infinite alternate;
+}
+@keyframes zoom {
+from { transform: scale(1); }
+to { transform: scale(1.1); }
+}
+.gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:15px; }
+.gallery img { width:100%; border-radius:10px; }
+footer { background:#8b0000; color:white; text-align:center; padding:20px; margin-top:30px; }
+</style>
+</head>
+<body>
+
+<header>Ethnic Wear Collection</header>
+
+<nav>
+<button onclick="showSection('home')">Home</button>
+<button onclick="showSection('lehenga')">Lehenga</button>
+<button onclick="showSection('suit')">Suit</button>
+</nav>
+
+<div id="home" class="section active">
+<div class="hero lehenga-hero">
+Stunning Red Lehenga Collection
+</div>
+</div>
+
+<div id="lehenga" class="section">
+<div class="hero lehenga-hero">Lehenga Styles</div>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0">
+<img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa">
+<img src="https://images.unsplash.com/photo-1603252109303-2751441dd157">
+</div>
+</div>
+
+<div id="suit" class="section">
+<div class="hero suit-hero">Elegant Suit Collection</div>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0">
+<img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2">
+<img src="https://images.unsplash.com/photo-1603252109303-2751441dd157">
+</div>
+</div>
+
+<footer>
+<p>Name: Kashish Anand (Owner)</p>
+<p>Contact no.: 9958552180</p>
+<p>Partner: Rajat Kumar</p>
+<p>Contact no.: 9717483809</p>
+<p>Address: Delhi 110053, A 46/3 Seelampur</p>
+</footer>
+
+<script>
+function showSection(sectionId) {
+document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+document.getElementById(sectionId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
