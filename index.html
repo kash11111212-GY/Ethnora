@@ -3,104 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ethnora - By Kashish</title>
+<title>Ethnora - Wedding Collection</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 <style>
-body { margin:0; font-family: 'Playfair Display', serif; background:#fff7f0; }
+body {
+  margin:0;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to bottom, #fff5f5, #ffeaea);
+}
 
-header { background:#8b0000; color:white; padding:15px; text-align:center; font-size:24px; }
+/* HEADER */
+header {
+  background: linear-gradient(90deg, #7b0000, #b30000);
+  color:white;
+  padding:18px;
+  text-align:center;
+  font-size:26px;
+  letter-spacing:2px;
+}
 
-nav { display:flex; justify-content:center; background:#d4af37; }
-nav button { padding:15px 25px; border:none; background:none; font-size:18px; cursor:pointer; }
-nav button:hover { background:#fff; }
+/* NAV */
+nav {
+  display:flex;
+  justify-content:center;
+  background: linear-gradient(90deg, #d4af37, #f5d76e);
+}
+nav button {
+  padding:15px 25px;
+  border:none;
+  background:none;
+  font-size:18px;
+  cursor:pointer;
+}
+nav button:hover {
+  background:#fff;
+}
 
+/* SECTIONS */
 .section { display:none; padding:20px; }
 .active { display:block; }
 
-/* PREMIUM HERO */
+/* HERO */
 .hero-container {
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
 
+/* MODEL IMAGE */
 .model {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('https://images.unsplash.com/photo-1610030469668-3d8b7c6b2e5e') no-repeat center/cover;
-  animation: zoomMove 10s ease-in-out infinite alternate;
+  background: url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf') no-repeat center/cover;
+  animation: zoomMove 12s ease-in-out infinite alternate;
   z-index: 1;
 }
 
+/* DARK OVERLAY */
 .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(80,0,0,0.5);
   z-index: 2;
 }
 
+/* FLOWER DECORATION */
+.flowers::before {
+  content: "🌸 🌺 ✨ 🌼";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 28px;
+  animation: float 6s infinite;
+}
+
+.flowers::after {
+  content: "✨ 🌸 🌺";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 28px;
+  animation: float 5s infinite;
+}
+
+/* TEXT */
 .hero-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #fff;
   text-align: center;
   z-index: 3;
 }
 
 .hero-text h1 {
-  font-size: 80px;
-  letter-spacing: 8px;
+  font-size: 90px;
+  letter-spacing: 10px;
   opacity: 0;
-  transform: translateY(50px);
   animation: textReveal 2s ease forwards;
 }
 
 .hero-text p {
-  font-size: 22px;
+  font-size: 24px;
+  margin-top:10px;
   opacity: 0;
   animation: fadeIn 3s ease forwards;
 }
 
+/* ANIMATIONS */
 @keyframes zoomMove {
-  from { transform: scale(1) translateX(0); }
-  to { transform: scale(1.1) translateX(-20px); }
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
 }
 
 @keyframes textReveal {
-  to { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
 @keyframes fadeIn {
   to { opacity: 1; }
 }
 
-/* OTHER SECTIONS */
-.hero { height:300px; display:flex; align-items:center; justify-content:center; color:white; font-size:30px; }
-
-.lehenga-hero {
-background: url('https://images.unsplash.com/photo-1610030469668-3d8b7c6b2e5e') no-repeat center/cover;
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
 }
 
-.suit-hero {
-background: url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf') no-repeat center/cover;
+/* GALLERY */
+.gallery {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap:15px;
+}
+.gallery img {
+  width:100%;
+  border-radius:12px;
+  transition: transform 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
 }
 
-.gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:15px; }
-.gallery img { width:100%; border-radius:10px; }
-
-footer { background:#8b0000; color:white; text-align:center; padding:20px; margin-top:30px; }
+/* FOOTER */
+footer {
+  background:#7b0000;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+}
 </style>
 </head>
 
 <body>
 
-<header>Ethnora</header>
+<header>ETHNORA ✨ Wedding Collection</header>
 
 <nav>
 <button onclick="showSection('home')">Home</button>
@@ -108,16 +171,16 @@ footer { background:#8b0000; color:white; text-align:center; padding:20px; margi
 <button onclick="showSection('suit')">Suit</button>
 </nav>
 
-<!-- PREMIUM HOME -->
+<!-- HOME -->
 <div id="home" class="section active">
-  <div class="hero-container">
+  <div class="hero-container flowers">
 
     <div class="model"></div>
     <div class="overlay"></div>
 
     <div class="hero-text">
       <h1>ETHNORA</h1>
-      <p>Elegance in Motion</p>
+      <p>Bridal Elegance & Royal Tradition</p>
     </div>
 
   </div>
@@ -125,17 +188,18 @@ footer { background:#8b0000; color:white; text-align:center; padding:20px; margi
 
 <!-- LEHENGA -->
 <div id="lehenga" class="section">
-<div class="hero lehenga-hero">Lehenga Styles</div>
+<h2 style="text-align:center;">Bridal Lehenga Collection 👰</h2>
 <div class="gallery">
 <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0">
 <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa">
 <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157">
+<img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2">
 </div>
 </div>
 
 <!-- SUIT -->
 <div id="suit" class="section">
-<div class="hero suit-hero">Elegant Suit Collection</div>
+<h2 style="text-align:center;">Festive Suit Collection 🌸</h2>
 <div class="gallery">
 <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0">
 <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2">
@@ -145,10 +209,10 @@ footer { background:#8b0000; color:white; text-align:center; padding:20px; margi
 
 <footer>
 <p>Name: Kashish Anand (Owner)</p>
-<p>Contact no.: 9958552180</p>
+<p>Contact: 9958552180</p>
 <p>Partner: Rajat Kumar</p>
-<p>Contact no.: 9717483809</p>
-<p>Address: Delhi 110053, A 46/3 Seelampur</p>
+<p>Contact: 9717483809</p>
+<p>Address: Delhi 110053</p>
 </footer>
 
 <script>
